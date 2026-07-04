@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import './Navbar.css'
 
 const LINKS = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'about', label: 'About Me' },
+  { id: 'experience', label: 'Journey' },
+  { id: 'projects', label: 'Featured Work' },
+  { id: 'skills', label: 'Toolbox' },
+  { id: 'contact', label: "Let's Connect" },
 ]
 
 export default function Navbar({ scrollRef }) {
