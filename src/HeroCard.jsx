@@ -31,12 +31,8 @@ export default function HeroCard() {
   const typed = useTypewriter(PHRASES)
 
   return (
-    <div className="hero-card-wrap">
-      <div className="notebook-spine" aria-hidden="true">
-        {Array.from({ length: 8 }).map((_, i) => <span key={i} />)}
-      </div>
-      <div className="hero-card">
-        <p className="eyebrow">available for opportunities</p>
+    <div className="hero-card">
+      <p className="eyebrow">available for opportunities</p>
       <h1 className="mono">Chung Shing</h1>
       <p className="hero-role mono">Software Engineer, Singapore</p>
       <p className="hero-status mono">{typed}<span className="cursor">|</span></p>
@@ -48,10 +44,6 @@ export default function HeroCard() {
         <a className="link-underline" href="https://www.linkedin.com/in/chungshinglai/" target="_blank" rel="noreferrer">linkedin</a>
         <a className="link-underline" href="https://github.com/chungshing" target="_blank" rel="noreferrer">github</a>
         <a className="link-underline" href="mailto:chungshingg@gmail.com">email</a>
-      </div>
-      <a className="resume-btn mono" href="/resume.pdf" download>
-        download resume ↓
-      </a>
       </div>
     </div>
   )
