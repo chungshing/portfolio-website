@@ -47,12 +47,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.hero-col::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
 }
 
 .hero-card {
@@ -60,6 +55,7 @@
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 28px 24px;
+  flex-shrink: 0;
 }
 
 .hero-card h1 {
@@ -133,7 +129,9 @@
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 20px;
-  flex-shrink: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .coder-card-title {
@@ -144,7 +142,8 @@
 
 .coder-card-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  flex: 1;
+  min-height: 0;
   object-fit: cover;
   border-radius: 6px;
   display: block;
