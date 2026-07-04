@@ -323,7 +323,7 @@ section h2 {
 
 /* responsive: stack vertically, page scrolls normally */
 @media (max-width: 900px) {
-  html, body, #root { height: auto; overflow: visible; }
+  html, body, #root { height: auto !important; overflow: visible !important; }
 
   .page { height: auto; }
   .layout { flex-direction: column; max-width: 100%; height: auto; flex: none; }
@@ -341,6 +341,7 @@ section h2 {
   }
 
   .nav-col {
+    order: -1;
     position: sticky;
     top: 0;
     z-index: 30;
@@ -395,4 +396,13 @@ section h2 {
   .content-col section:first-of-type { padding-top: 40px; }
 
   .lofi-bar { position: static; transform: none; width: fit-content; margin: 16px auto 0; }
+
+  .coder-card {
+    flex: none;
+  }
+
+  .coder-card-img {
+    flex: none;
+    aspect-ratio: 4 / 3;
+  }
 }

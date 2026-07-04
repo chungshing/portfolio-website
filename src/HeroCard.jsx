@@ -1,67 +1,77 @@
-import { useEffect, useState } from 'react'
-import { Linkedin, Github, Mail, ArrowRight } from 'lucide-react'
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
-const PHRASES = ['coffee brewing...', 'code compiling...', 'ideas loading...']
+const PHRASES = ['coffee brewing...', 'code compiling...', 'ideas loading...'];
 
 function useTypewriter(phrases, speed = 55, pause = 1400) {
-  const [text, setText] = useState('')
-  const [i, setI] = useState(0)
-  const [deleting, setDeleting] = useState(false)
+    const [text, setText] = useState('');
+    const [i, setI] = useState(0);
+    const [deleting, setDeleting] = useState(false);
 
-  useEffect(() => {
-    const current = phrases[i % phrases.length]
-    let timeout
+    useEffect(() => {
+        const current = phrases[i % phrases.length];
+        let timeout;
 
-    if (!deleting && text === current) {
-      timeout = setTimeout(() => setDeleting(true), pause)
-    } else if (deleting && text === '') {
-      setDeleting(false)
-      setI((n) => n + 1)
-    } else {
-      timeout = setTimeout(() => {
-        setText(current.slice(0, deleting ? text.length - 1 : text.length + 1))
-      }, deleting ? speed / 2 : speed)
-    }
-    return () => clearTimeout(timeout)
-  }, [text, deleting, i, phrases, speed, pause])
+        if (!deleting && text === current) {
+            timeout = setTimeout(() => setDeleting(true), pause);
+        } else if (deleting && text === '') {
+            setDeleting(false);
+            setI((n) => n + 1);
+        } else {
+            timeout = setTimeout(
+                () => {
+                    setText(current.slice(0, deleting ? text.length - 1 : text.length + 1));
+                },
+                deleting ? speed / 2 : speed
+            );
+        }
+        return () => clearTimeout(timeout);
+    }, [text, deleting, i, phrases, speed, pause]);
 
-  return text
+    return text;
 }
 
 const LINKS = [
-  { icon: Linkedin, label: 'linkedin', href: 'https://www.linkedin.com/in/chungshinglai/', external: true },
-  { icon: Github, label: 'github', href: 'https://github.com/chungshing', external: true },
-  { icon: Mail, label: 'email', href: 'mailto:chungshingg@gmail.com', external: false },
-]
+    {
+        icon: Linkedin,
+        label: 'linkedin',
+        href: 'https://www.linkedin.com/in/chungshinglai/',
+        external: true,
+    },
+    { icon: Github, label: 'github', href: 'https://github.com/chungshing', external: true },
+    { icon: Mail, label: 'email', href: 'mailto:chungshinglai@gmail.com', external: false },
+];
 
 export default function HeroCard() {
-  const typed = useTypewriter(PHRASES)
+    const typed = useTypewriter(PHRASES);
 
-  return (
-    <div className="hero-card">
-      <p className="eyebrow">available for opportunities</p>
-      <h1 className="mono">Chung Shing</h1>
-      <p className="hero-role mono">Software Engineer, Singapore</p>
-      <p className="hero-status mono">{typed}<span className="cursor">|</span></p>
-      <p className="hero-desc">
-        I build backend systems and full-stack tools, mostly with a cup of coffee
-        nearby.
-      </p>
-      <div className="hero-links">
-        {LINKS.map(({ icon: Icon, label, href, external }) => (
-          <a
-            key={label}
-            className="hero-link-row"
-            href={href}
-            target={external ? '_blank' : undefined}
-            rel={external ? 'noreferrer' : undefined}
-          >
-            <Icon size={15} strokeWidth={1.75} />
-            <span className="mono">{label}</span>
-            <ArrowRight size={13} strokeWidth={1.75} className="hero-link-arrow" />
-          </a>
-        ))}
-      </div>
-    </div>
-  )
+    return (
+        <div className='hero-card'>
+            <p className='eyebrow'>available for opportunities</p>
+            <h1 className='mono'>Chung Shing</h1>
+            <p className='hero-role mono'>Software Engineer, Singapore</p>
+            <p className='hero-status mono'>
+                {typed}
+                <span className='cursor'>|</span>
+            </p>
+            <p className='hero-desc'>
+                I build backend systems and full-stack tools, mostly with a cup of coffee nearby.
+            </p>
+            <div className='hero-links'>
+                {LINKS.map(({ icon: Icon, label, href, external }) => (
+                    <a
+                        key={label}
+                        className='hero-link-row'
+                        href={href}
+                        target={external ? '_blank' : undefined}
+                        rel={external ? 'noreferrer' : undefined}
+                    >
+                        <Icon size={15} strokeWidth={1.75} />
+                        <span className='mono'>{label}</span>
+                        <ArrowRight size={13} strokeWidth={1.75} className='hero-link-arrow' />
+                    </a>
+                ))}
+            </div>
+        </div>
+    );
 }

@@ -18,7 +18,7 @@ export default function Navbar({ scrollRef }) {
     const sections = LINKS.map((l) => document.getElementById(l.id)).filter(Boolean)
     if (!sections.length) return
 
-    const THRESHOLD = 100 // px from top of scroll box counted as "current"
+    const THRESHOLD = 140 // px from top of viewport counted as "current"
 
     const onScroll = () => {
       const rootScrolls = root.scrollHeight > root.clientHeight + 4
@@ -30,11 +30,10 @@ export default function Navbar({ scrollRef }) {
         setActive(sections[sections.length - 1].id)
         return
       }
-      const rootTop = root.getBoundingClientRect().top
       let current = sections[0].id
       for (const sec of sections) {
-        const rel = sec.getBoundingClientRect().top - rootTop
-        if (rel <= THRESHOLD) current = sec.id
+        const top = sec.getBoundingClientRect().top
+        if (top <= THRESHOLD) current = sec.id
       }
       setActive(current)
     }
