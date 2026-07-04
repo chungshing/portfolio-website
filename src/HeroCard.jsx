@@ -1,7 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const PHRASES = ['coffee brewing...', 'code compiling...', 'ideas loading...'];
+const PHRASES = ['coffee brewing...', 'code compiling...', 'shipping features...'];
 
 function useTypewriter(phrases, speed = 55, pause = 1400) {
     const [text, setText] = useState('');

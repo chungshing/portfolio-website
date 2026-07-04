@@ -1,32 +1,24 @@
-.rain {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.35;
-    background-image: repeating-linear-gradient(
-        100deg,
-        transparent 0,
-        transparent 90px,
-        rgba(168, 153, 132, 0.05) 91px,
-        transparent 92px
-    );
-    animation: drift 9s linear infinite;
-}
-
-@keyframes drift {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: -200px 400px;
-    }
-}
-
 .page {
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.05;
+
+    background-image: repeating-linear-gradient(
+        -20deg,
+        transparent 0,
+        transparent 120px,
+        rgba(255, 255, 255, 0.02) 121px,
+        transparent 122px
+    );
 }
 
 .layout {
@@ -160,6 +152,20 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-main);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.coder-card-drink.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coder-card-drink.hidden {
+    opacity: 0;
+    transform: translateY(-6px);
 }
 
 .coder-divider {
@@ -182,6 +188,22 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-main);
+}
+
+.hero-card,
+.coder-card,
+.card {
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.hero-card:hover,
+.coder-card:hover,
+.card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(214, 153, 54, 0.25);
 }
 
 /* right: nav — same vertical span as the content box */

@@ -4,11 +4,28 @@ import coderImg from './assets/coder.png';
 const DRINKS = ['Espresso', 'Cortado', 'Flat White', 'Latte', 'Cappuccino', 'Mocha'];
 
 export default function CoderCard() {
-    const [drinkIndex, setDrinkIndex] = useState(0);
+    const [drinkIndex, setDrinkIndex] = useState(() => Math.floor(Math.random() * DRINKS.length));
+    const [fade, setFade] = useState(true);
 
     useEffect(() => {
         const id = setInterval(() => {
-            setDrinkIndex((i) => (i + 1) % DRINKS.length);
+            // Fade out
+            setFade(false);
+
+            setTimeout(() => {
+                setDrinkIndex((current) => {
+                    let next;
+
+                    do {
+                        next = Math.floor(Math.random() * DRINKS.length);
+                    } while (next === current);
+
+                    return next;
+                });
+
+                // Fade back in
+                setFade(true);
+            }, 200);
         }, 5500);
 
         return () => clearInterval(id);
@@ -18,7 +35,9 @@ export default function CoderCard() {
         <div className='coder-card'>
             <p className='coder-card-label mono'>☕ Today's Special</p>
 
-            <h3 className='coder-card-drink mono'>{DRINKS[drinkIndex]}</h3>
+            <h3 className={`coder-card-drink mono ${fade ? 'visible' : 'hidden'}`}>
+                {DRINKS[drinkIndex]}
+            </h3>
 
             <img
                 src={coderImg}
