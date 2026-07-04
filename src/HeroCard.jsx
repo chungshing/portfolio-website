@@ -39,7 +39,7 @@ const LINKS = [
         external: true,
     },
     { icon: Github, label: 'github', href: 'https://github.com/chungshing', external: true },
-    { icon: Mail, label: 'email', href: 'mailto:chungshinglai@gmail.com', external: false },
+    { icon: Mail, label: 'email', href: 'mailto:chungshingg@gmail.com', external: false },
 ];
 
 export default function HeroCard() {
@@ -47,15 +47,12 @@ export default function HeroCard() {
 
     return (
         <div className='hero-card'>
-            <p className='eyebrow'>available for opportunities</p>
+            <p className='eyebrow'>developer's corner</p>
             <h1 className='mono'>Chung Shing</h1>
             <p className='hero-role mono'>Software Engineer, Singapore</p>
             <p className='hero-status mono'>
                 {typed}
                 <span className='cursor'>|</span>
-            </p>
-            <p className='hero-desc'>
-                I build backend systems and full-stack tools, mostly with a cup of coffee nearby.
             </p>
             <div className='hero-links'>
                 {LINKS.map(({ icon: Icon, label, href, external }) => (
