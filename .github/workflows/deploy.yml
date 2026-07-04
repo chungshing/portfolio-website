@@ -4,7 +4,7 @@ on:
   push:
     branches: 'main' # Triggers on push to main
 
-permission:
+permissions:
   contents: read
   pages: write
   id-token: write
