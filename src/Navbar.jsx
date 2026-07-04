@@ -14,6 +14,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const sections = LINKS.map((l) => document.getElementById(l.id)).filter(Boolean)
+    if (!sections.length) return
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,7 +22,7 @@ export default function Navbar() {
           if (entry.isIntersecting) setActive(entry.target.id)
         })
       },
-      { rootMargin: '-40% 0px -50% 0px', threshold: 0 }
+      { rootMargin: '-35% 0px -50% 0px', threshold: 0 }
     )
 
     sections.forEach((s) => observer.observe(s))
@@ -30,18 +31,15 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <a href="#hero" className="navbar-brand mono">☕ Chung Shing</a>
-      <div className="navbar-links">
-        {LINKS.map((l) => (
-          <a
-            key={l.id}
-            href={`#${l.id}`}
-            className={`mono navbar-link ${active === l.id ? 'is-active' : ''}`}
-          >
-            {l.label}
-          </a>
-        ))}
-      </div>
+      {LINKS.map((l) => (
+        <a
+          key={l.id}
+          href={`#${l.id}`}
+          className={`mono navbar-link ${active === l.id ? 'is-active' : ''}`}
+        >
+          {l.label}
+        </a>
+      ))}
     </nav>
   )
 }
