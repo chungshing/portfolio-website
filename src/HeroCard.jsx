@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Linkedin, Github, Mail, ArrowRight } from 'lucide-react'
 
 const PHRASES = ['coffee brewing...', 'code compiling...', 'ideas loading...']
 
@@ -27,6 +28,12 @@ function useTypewriter(phrases, speed = 55, pause = 1400) {
   return text
 }
 
+const LINKS = [
+  { icon: Linkedin, label: 'linkedin', href: 'https://www.linkedin.com/in/chungshinglai/', external: true },
+  { icon: Github, label: 'github', href: 'https://github.com/chungshing', external: true },
+  { icon: Mail, label: 'email', href: 'mailto:chungshingg@gmail.com', external: false },
+]
+
 export default function HeroCard() {
   const typed = useTypewriter(PHRASES)
 
@@ -41,9 +48,19 @@ export default function HeroCard() {
         nearby.
       </p>
       <div className="hero-links">
-        <a className="link-underline" href="https://www.linkedin.com/in/chungshinglai/" target="_blank" rel="noreferrer">linkedin</a>
-        <a className="link-underline" href="https://github.com/chungshing" target="_blank" rel="noreferrer">github</a>
-        <a className="link-underline" href="mailto:chungshingg@gmail.com">email</a>
+        {LINKS.map(({ icon: Icon, label, href, external }) => (
+          <a
+            key={label}
+            className="hero-link-row"
+            href={href}
+            target={external ? '_blank' : undefined}
+            rel={external ? 'noreferrer' : undefined}
+          >
+            <Icon size={15} strokeWidth={1.75} />
+            <span className="mono">{label}</span>
+            <ArrowRight size={13} strokeWidth={1.75} className="hero-link-arrow" />
+          </a>
+        ))}
       </div>
     </div>
   )

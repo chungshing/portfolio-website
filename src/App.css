@@ -45,7 +45,14 @@
   height: 100%;
   padding: 60px 0;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.hero-col::-webkit-scrollbar {
+  display: none;
 }
 
 .hero-card {
@@ -85,9 +92,77 @@
 .hero-links {
   display: flex;
   flex-direction: column;
+  gap: 2px;
+}
+
+.hero-link-row {
+  display: flex;
+  align-items: center;
   gap: 10px;
-  font-family: var(--font-display);
+  padding: 8px 4px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.82rem;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.hero-link-row span {
+  flex: 1;
+}
+
+.hero-link-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero-link-row:hover {
+  color: var(--accent-amber);
+  background: var(--bg-soft);
+}
+
+.hero-link-row:hover .hero-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* second sidebar card: coffee & code photo */
+.coder-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.coder-card-title {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.coder-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.coder-card-drink {
+  color: var(--accent-amber);
+}
+
+.coder-card-caption {
+  margin: 14px 0 0;
   font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.coder-card-caption--sub {
+  margin-top: 4px;
 }
 
 /* right: nav — same vertical span as the content box */
@@ -259,6 +334,9 @@ section h2 {
     height: auto;
     margin: 0;
     padding: 32px var(--pad);
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: visible;
     border: none;
     border-bottom: 1px solid var(--border);
   }

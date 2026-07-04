@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import HeroCard from './HeroCard.jsx'
+import CoderCard from './CoderCard.jsx'
 import Navbar from './Navbar.jsx'
 import LofiBar from './LofiBar.jsx'
 import ContactForm from './ContactForm.jsx'
@@ -50,6 +51,7 @@ export default function App() {
       <div className="layout">
         <aside className="hero-col">
           <HeroCard />
+          <CoderCard />
         </aside>
 
         <div className="content-wrap">
