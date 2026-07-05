@@ -45,20 +45,31 @@ const PROJECTS = [
     },
 ];
 
-// TODO: adjust to your real stack
-const STACK = [
-    'Java',
-    'Spring',
-    'Python',
-    'JavaScript',
-    'React',
-    'Next.js',
-    'Node.js',
-    'PostgreSQL',
-    'MySQL',
-    'MongoDB',
-    'Git',
-];
+const STACK = {
+    Frontend: [
+        { name: 'React', icon: 'devicon-react-original colored' },
+        { name: 'Next.js', icon: 'devicon-nextjs-plain' },
+        { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+    ],
+    Backend: [
+        { name: 'Java', icon: 'devicon-java-plain colored' },
+        { name: 'Spring', icon: 'devicon-spring-plain colored' },
+        { name: 'Python', icon: 'devicon-python-plain colored' },
+        { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
+        { name: 'PHP', icon: 'devicon-php-plain colored' },
+    ],
+    Data: [
+        { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
+        { name: 'MySQL', icon: 'devicon-mysql-original colored' },
+        { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
+    ],
+    Workflow: [
+        { name: 'Git', icon: 'devicon-git-plain colored' },
+        { name: 'SVN', icon: 'devicon-subversion-original colored' },
+        { name: 'Docker', icon: 'devicon-docker-plain colored' },
+        { name: 'Postman', icon: 'devicon-postman-plain colored' },
+    ],
+};
 
 const EXPERIENCE = [
     {
@@ -263,13 +274,24 @@ export default function App() {
                             <p className='eyebrow'>on the desk</p>
                             <h2>Toolbox</h2>
                             <p className='subtitle'>Tools I reach for.</p>
-                            <div className='stack-grid'>
-                                {STACK.map((s) => (
-                                    <span className='tag' key={s}>
-                                        {s}
-                                    </span>
+                            <div className='stack-columns'>
+                                {Object.entries(STACK).map(([group, tools]) => (
+                                    <div className='stack-group' key={group}>
+                                        <p className='stack-group-label mono'>{group}</p>
+                                        <div className='stack-grid'>
+                                            {tools.map((t) => (
+                                                <span className='tag' key={t.name}>
+                                                    <i className={t.icon}></i> {t.name}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
+                            <p className='margin-note'>
+                                ✎ The stack changes, but the goal stays the same: build something
+                                useful.
+                            </p>
                         </section>
 
                         <hr className='section-divider' />

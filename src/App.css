@@ -351,6 +351,18 @@ section h2 {
     margin-top: 20px;
 }
 
+.stack-group {
+    margin-bottom: 20px;
+}
+
+.stack-group-label {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+}
+
 .project-list {
     display: flex;
     flex-direction: column;
