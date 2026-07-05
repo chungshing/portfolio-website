@@ -68,8 +68,9 @@ export default function App() {
                 <div className='content-wrap'>
                     <main className='content-col' ref={contentRef}>
                         <section id='about'>
-                            <p className='eyebrow'>about</p>
-                            <h2>What I'm about</h2>
+                            <p className='eyebrow'>behind the keyboard</p>
+                            <h2>About Me</h2>
+                            <p className='subtitle'>Slow builds, steady progress.</p>
                             <p style={{ marginTop: 18 }}>
                                 {/* TODO: replace with your own 2–4 sentence bio */}I enjoy turning
                                 ideas into working software and understanding how systems work under
@@ -80,8 +81,9 @@ export default function App() {
                         </section>
 
                         <section id='experience'>
-                            <p className='eyebrow'>the grind</p>
-                            <h2>Experience</h2>
+                            <p className='eyebrow'>learning by building</p>
+                            <h2>Journey</h2>
+                            <p className='subtitle'>From the classroom to real-world software.</p>
                             <div className='project-list'>
                                 {EXPERIENCE.map((e) => (
                                     <div className='card' key={e.role + e.org}>
@@ -101,8 +103,9 @@ export default function App() {
                         </section>
 
                         <section id='projects'>
-                            <p className='eyebrow'>notebook</p>
-                            <h2>Things I've built</h2>
+                            <p className='eyebrow'>pages from the notebook</p>
+                            <h2>Featured Work</h2>
+                            <p className='subtitle'>Small ideas, quietly shipped.</p>
                             <div className='project-list'>
                                 {PROJECTS.map((p) => (
                                     <a
@@ -128,7 +131,8 @@ export default function App() {
 
                         <section id='skills'>
                             <p className='eyebrow'>on the desk</p>
-                            <h2>Tools &amp; tech</h2>
+                            <h2>Toolbox</h2>
+                            <p className='subtitle'>Tools I reach for.</p>
                             <div className='stack-grid'>
                                 {STACK.map((s) => (
                                     <span className='tag' key={s}>
@@ -140,7 +144,8 @@ export default function App() {
 
                         <section id='contact'>
                             <p className='eyebrow'>leave a note</p>
-                            <h2>Get in touch</h2>
+                            <h2>Let's Connect</h2>
+                            <p className='subtitle'>Coffee's on, let's talk.</p>
                             <p style={{ marginTop: 18 }}>
                                 Reach out on{' '}
                                 <a

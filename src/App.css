@@ -315,6 +315,17 @@
     color: var(--accent-amber);
 }
 
+.form-hint {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-faint);
+}
+
+.form-hint a {
+    color: var(--accent-amber);
+    border-bottom: 1px solid var(--text-faint);
+}
+
 section h2 {
     font-size: 1.4rem;
     margin-bottom: 4px;

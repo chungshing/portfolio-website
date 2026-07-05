@@ -39,7 +39,7 @@ const LINKS = [
         external: true,
     },
     { icon: Github, label: 'github', href: 'https://github.com/chungshing', external: true },
-    { icon: Mail, label: 'email', href: 'mailto:chungshingg@gmail.com', external: false },
+    { icon: Mail, label: 'email', href: 'mailto:chungshinglai@gmail.com', external: false },
 ];
 
 export default function HeroCard() {
