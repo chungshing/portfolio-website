@@ -484,10 +484,30 @@ section h2 {
 .site-footer {
     flex-shrink: 0;
     text-align: center;
-    color: var(--text-faint);
-    font-size: 0.78rem;
-    padding: 16px 0;
+    padding: 24px 0 16px;
     border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-thanks {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.footer-quote {
+    font-size: 0.78rem;
+    color: var(--accent-amber);
+    margin: 0;
+}
+
+.footer-copyright {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    margin: 0;
 }
 
 .margin-note {

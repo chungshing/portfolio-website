@@ -324,7 +324,11 @@ export default function App() {
                 </aside>
             </div>
 
-            <footer className='site-footer mono'>build · break · learn · repeat</footer>
+            <footer className='site-footer mono'>
+                <p className='footer-thanks'>Thanks for reading a few pages from my notebook.</p>
+                <p className='footer-quote'>build · break · learn · repeat</p>
+                <p className='footer-copyright'>© {new Date().getFullYear()} Chung Shing</p>
+            </footer>
 
             {videoModal && (
                 <div className='video-modal-backdrop' onClick={() => setVideoModal(null)}>
