@@ -32,7 +32,7 @@ const PROJECTS = [
             'Google Cloud',
         ],
         github: null,
-        video: 'https://raw.githubusercontent.com/chungshing/portfolio-assets/main/video/golf.mp4',
+        video: 'https://chungshing.github.io/portfolio-assets/video/golf.mp4',
     },
     {
         title: 'Hospitality Booking Platform',

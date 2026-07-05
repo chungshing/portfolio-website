@@ -39,7 +39,7 @@ export default function CoderCard() {
             </h3>
 
             <img
-                src='https://raw.githubusercontent.com/chungshing/portfolio-assets/main/image/coder.png'
+                src='https://chungshing.github.io/portfolio-assets/image/coder.png'
                 alt='Illustration of a developer coding at a desk'
                 className='coder-card-img'
             />
