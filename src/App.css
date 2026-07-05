@@ -144,6 +144,8 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .coder-card-label {
@@ -183,11 +185,12 @@
 
 .coder-card-img {
     width: 100%;
-    height: 160px;
     object-fit: cover;
     border-radius: 10px;
     display: block;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    flex: 1;
+    min-height: 0;
 }
 
 .coder-card-caption {
