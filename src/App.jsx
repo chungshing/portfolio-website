@@ -72,12 +72,19 @@ export default function App() {
                             <h2>About Me</h2>
                             <p className='subtitle'>Slow builds, steady progress.</p>
                             <p style={{ marginTop: 18 }}>
-                                {/* TODO: replace with your own 2–4 sentence bio */}I enjoy turning
-                                ideas into working software and understanding how systems work under
-                                the hood. Most of my time goes into backend architecture and
-                                data-heavy tools, with the occasional detour into whatever's
-                                interesting that week.
+                                I like pulling ideas apart to understand how they work, then
+                                rebuilding them into something practical. Most of what I enjoy
+                                building are backend-heavy applications, full-stack projects, and
+                                tools that solve real problems while helping me better understand
+                                the systems behind them.
                             </p>
+                            <p>
+                                Most projects begin with a question—an API I want to explore, a
+                                workflow I think could be smoother, or a dataset that deserves a
+                                better way to be visualized. I'd rather ship something small and
+                                working than plan something perfect and stalled.
+                            </p>
+                            <p className='margin-note'>✎ curiosity is where my projects begin</p>
                         </section>
 
                         <section id='experience'>
