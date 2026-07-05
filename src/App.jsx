@@ -127,6 +127,8 @@ export default function App() {
                             <p className='margin-note'>✎ curiosity is where my projects begin</p>
                         </section>
 
+                        <hr className='section-divider' />
+
                         <section id='experience'>
                             <p className='eyebrow'>learning by building</p>
                             <h2>Journey</h2>
@@ -184,6 +186,8 @@ export default function App() {
                             </div>
                         </section>
 
+                        <hr className='section-divider' />
+
                         <section id='projects'>
                             <p className='eyebrow'>pages from the notebook</p>
                             <h2>Featured Work</h2>
@@ -211,6 +215,8 @@ export default function App() {
                             </div>
                         </section>
 
+                        <hr className='section-divider' />
+
                         <section id='skills'>
                             <p className='eyebrow'>on the desk</p>
                             <h2>Toolbox</h2>
@@ -223,6 +229,8 @@ export default function App() {
                                 ))}
                             </div>
                         </section>
+
+                        <hr className='section-divider' />
 
                         <section id='contact'>
                             <p className='eyebrow'>leave a note</p>

@@ -331,6 +331,12 @@ section h2 {
     margin-bottom: 4px;
 }
 
+.section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 48px 0;
+    border: none;
+}
 .stack-grid {
     display: flex;
     flex-wrap: wrap;
