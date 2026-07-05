@@ -6,26 +6,42 @@ import HeroCard from './HeroCard.jsx';
 import LofiBar from './LofiBar.jsx';
 import Navbar from './Navbar.jsx';
 
-// TODO: replace with your real projects
 const PROJECTS = [
     {
         title: 'F1 Race Intelligence Dashboard',
         description:
-            'Real-time race insights — Spring Boot ingestion layer, in-memory processing engine, Next.js frontend.',
-        stack: ['Spring Boot', 'Next.js', 'PostgreSQL'],
-        href: 'https://github.com/chungshing/f1-race-intelligence-dashboard',
+            'Started as a way to combine my interest in Formula 1 with learning full-stack development. It now pulls in race data, processes it, and surfaces strategy insights through an interactive dashboard.',
+        note: '✦ Running live with automated race data updates.',
+        stack: ['Spring Boot', 'Next.js', 'PostgreSQL', 'REST API'],
+        github: 'https://github.com/chungshing/f1-race-intelligence-dashboard',
+        demo: 'https://f1-race-intelligence-dashboard.vercel.app',
     },
     {
-        title: 'Project two',
-        description: 'One or two sentences on what it does and the problem it solves.',
-        stack: ['Python', 'Tkinter'],
-        href: '#',
+        title: 'Golf Swing AI Analysis',
+        description:
+            'What if a golf swing could be broken down frame by frame and explained like a coach would? This project explores that idea using computer vision and machine learning to turn swing videos into actionable feedback.',
+        note: '✦ Built alongside an industry partner through SIT.',
+        stack: [
+            'Python',
+            'Computer Vision',
+            'TensorFlow',
+            'MediaPipe',
+            'OpenCV',
+            'Flask',
+            'MongoDB',
+            'Google Cloud',
+        ],
+        github: null,
+        video: 'https://raw.githubusercontent.com/chungshing/portfolio-assets/main/video/golf.mp4',
     },
     {
-        title: 'Project three',
-        description: 'One or two sentences on what it does and the problem it solves.',
-        stack: ['React', 'Node.js'],
-        href: '#',
+        title: 'Hospitality Booking Platform',
+        description:
+            'Behind every hotel booking is a series of moving parts — availability checks, user authentication, reservation logic. Building this platform meant designing and connecting those pieces into one cohesive full-stack system.',
+        note: '✦ Exploring SQL and NoSQL in one booking platform.',
+        stack: ['Node.js', 'EJS', 'MySQL', 'MongoDB'],
+        github: 'https://github.com/chungshing/hospitality-booking-platform',
+        demo: null,
     },
 ];
 
@@ -96,6 +112,7 @@ const EDUCATION = [
 export default function App() {
     const contentRef = useRef(null);
     const [journeyTab, setJourneyTab] = useState('experience');
+    const [videoModal, setVideoModal] = useState(null);
 
     return (
         <div className='page'>
@@ -191,18 +208,13 @@ export default function App() {
                         <section id='projects'>
                             <p className='eyebrow'>pages from the notebook</p>
                             <h2>Featured Work</h2>
-                            <p className='subtitle'>Small ideas, quietly shipped.</p>
+                            <p className='subtitle'>Projects that taught me something.</p>
                             <div className='project-list'>
                                 {PROJECTS.map((p) => (
-                                    <a
-                                        className='card project-card'
-                                        href={p.href}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                        key={p.title}
-                                    >
+                                    <div className='card project-card' key={p.title}>
                                         <h3>{p.title}</h3>
                                         <p>{p.description}</p>
+                                        {p.note && <p className='project-note mono'>{p.note}</p>}
                                         <div className='project-tags'>
                                             {p.stack.map((s) => (
                                                 <span className='tag' key={s}>
@@ -210,7 +222,37 @@ export default function App() {
                                                 </span>
                                             ))}
                                         </div>
-                                    </a>
+                                        <div className='project-actions'>
+                                            {p.demo && (
+                                                <a
+                                                    className='project-btn project-btn-primary'
+                                                    href={p.demo}
+                                                    target='_blank'
+                                                    rel='noreferrer'
+                                                >
+                                                    Live Demo →
+                                                </a>
+                                            )}
+                                            {p.video && (
+                                                <button
+                                                    className='project-btn project-btn-primary'
+                                                    onClick={() => setVideoModal(p.video)}
+                                                >
+                                                    Live Demo →
+                                                </button>
+                                            )}
+                                            {p.github && (
+                                                <a
+                                                    className='project-btn'
+                                                    href={p.github}
+                                                    target='_blank'
+                                                    rel='noreferrer'
+                                                >
+                                                    GitHub →
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
                         </section>
@@ -261,6 +303,21 @@ export default function App() {
             </div>
 
             <footer className='site-footer mono'>build · break · learn · repeat</footer>
+
+            {videoModal && (
+                <div className='video-modal-backdrop' onClick={() => setVideoModal(null)}>
+                    <div className='video-modal' onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className='video-modal-close'
+                            onClick={() => setVideoModal(null)}
+                            aria-label='Close video'
+                        >
+                            ✕
+                        </button>
+                        <video src={videoModal} controls autoPlay />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

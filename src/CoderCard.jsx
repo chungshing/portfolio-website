@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import coderImg from './assets/coder.png';
 
 const DRINKS = ['Espresso', 'Cortado', 'Flat White', 'Latte', 'Cappuccino', 'Mocha'];
 
@@ -40,7 +39,7 @@ export default function CoderCard() {
             </h3>
 
             <img
-                src={coderImg}
+                src='https://raw.githubusercontent.com/chungshing/portfolio-assets/main/image/coder.png'
                 alt='Illustration of a developer coding at a desk'
                 className='coder-card-img'
             />

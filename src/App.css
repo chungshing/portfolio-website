@@ -72,6 +72,13 @@
     margin-bottom: 4px;
 }
 
+.hero-tagline {
+    margin: 12px 0 16px;
+    color: var(--text-faint);
+    font-size: 0.75rem;
+    line-height: 1.7;
+}
+
 .cursor {
     animation: blink 1s step-end infinite;
 }
@@ -353,8 +360,97 @@ section h2 {
 
 .project-card {
     display: block;
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.project-btn {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-dim);
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.project-btn:hover {
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+    transform: translateY(-1px);
+}
+
+.project-btn-primary {
+    background: var(--accent-amber);
+    color: var(--bg);
+    border-color: var(--accent-amber);
+}
+
+.project-btn-primary:hover {
+    background: var(--accent-rust);
+    border-color: var(--accent-rust);
+    color: var(--bg);
+}
+
+.project-note {
+    font-size: 0.78rem;
+    color: var(--accent-amber);
+    margin-top: -6px;
+    margin-bottom: 14px;
+}
+
+.video-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.video-modal {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.video-modal video {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--accent-amber);
+    color: var(--bg);
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-card h3 {

@@ -1,7 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const PHRASES = ['coffee brewing...', 'code compiling...', 'shipping features...'];
+const PHRASES = ['coffee brewing...', 'late night debugging...', 'ideas becoming reality...'];
 
 function useTypewriter(phrases, speed = 55, pause = 1400) {
     const [text, setText] = useState('');
@@ -50,6 +50,11 @@ export default function HeroCard() {
             <p className='eyebrow'>developer's corner</p>
             <h1 className='mono'>Chung Shing</h1>
             <p className='hero-role mono'>Software Engineer, Singapore</p>
+            <p className='hero-tagline'>
+                Turning ideas into software,
+                <br />
+                one page at a time.
+            </p>
             <p className='hero-status mono'>
                 {typed}
                 <span className='cursor'>|</span>
