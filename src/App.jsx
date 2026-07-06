@@ -40,8 +40,14 @@ const PROJECTS = [
             'Behind every hotel booking is a series of moving parts — availability checks, user authentication, reservation logic. Building it meant connecting those moving parts into one cohesive full-stack system.',
         note: '✦ Exploring SQL and NoSQL in one booking platform.',
         stack: ['Node.js', 'EJS', 'MySQL', 'MongoDB'],
-        github: 'https://github.com/chungshing/hospitality-booking-platform',
-        demo: null,
+        github: null,
+        screenshots: [
+            'https://chungshing.github.io/portfolio-assets/image/webpage1.png',
+            'https://chungshing.github.io/portfolio-assets/image/webpage2.png',
+            'https://chungshing.github.io/portfolio-assets/image/webpage3.png',
+            'https://chungshing.github.io/portfolio-assets/image/webpage4.png',
+            'https://chungshing.github.io/portfolio-assets/image/webpage5.png',
+        ],
     },
 ];
 
@@ -124,6 +130,8 @@ export default function App() {
     const contentRef = useRef(null);
     const [journeyTab, setJourneyTab] = useState('experience');
     const [videoModal, setVideoModal] = useState(null);
+    const [imageGallery, setImageGallery] = useState(null);
+    const [currentImage, setCurrentImage] = useState(0);
 
     return (
         <div className='page'>
@@ -233,15 +241,16 @@ export default function App() {
                                             ))}
                                         </div>
                                         <div className='project-actions'>
-                                            {p.demo && (
-                                                <a
+                                            {p.screenshots && (
+                                                <button
                                                     className='project-btn project-btn-primary'
-                                                    href={p.demo}
-                                                    target='_blank'
-                                                    rel='noreferrer'
+                                                    onClick={() => {
+                                                        setImageGallery(p.screenshots);
+                                                        setCurrentImage(0);
+                                                    }}
                                                 >
-                                                    Live Demo →
-                                                </a>
+                                                    View Screenshots →
+                                                </button>
                                             )}
                                             {p.video && (
                                                 <button
@@ -340,6 +349,57 @@ export default function App() {
                             ✕
                         </button>
                         <video src={videoModal} controls autoPlay />
+                    </div>
+                </div>
+            )}
+            {imageGallery && (
+                <div className='video-modal-backdrop' onClick={() => setImageGallery(null)}>
+                    <div className='image-viewer' onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className='image-viewer-close'
+                            onClick={() => setImageGallery(null)}
+                            aria-label='Close'
+                        >
+                            ×
+                        </button>
+
+                        <h3 className='image-title'>Hospitality Booking Platform</h3>
+
+                        <img src={imageGallery[currentImage]} alt='' className='viewer-image' />
+
+                        <div className='viewer-controls'>
+                            <button
+                                className='project-btn'
+                                disabled={currentImage === 0}
+                                onClick={() => setCurrentImage(currentImage - 1)}
+                            >
+                                ← Previous
+                            </button>
+
+                            <span className='mono'>
+                                {currentImage + 1} / {imageGallery.length}
+                            </span>
+
+                            <button
+                                className='project-btn'
+                                disabled={currentImage === imageGallery.length - 1}
+                                onClick={() => setCurrentImage(currentImage + 1)}
+                            >
+                                Next →
+                            </button>
+                        </div>
+
+                        <div className='viewer-dots'>
+                            {imageGallery.map((_, i) => (
+                                <button
+                                    key={i}
+                                    className={
+                                        i === currentImage ? 'viewer-dot active' : 'viewer-dot'
+                                    }
+                                    onClick={() => setCurrentImage(i)}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}
