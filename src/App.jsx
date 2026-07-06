@@ -60,6 +60,7 @@ const PROJECTS = [
                 type: 'screenshots',
                 label: 'View Screenshots',
                 images: [
+                    'https://chungshing.github.io/portfolio-assets/image/archDiagram.png',
                     'https://chungshing.github.io/portfolio-assets/image/webpage1.png',
                     'https://chungshing.github.io/portfolio-assets/image/webpage2.png',
                     'https://chungshing.github.io/portfolio-assets/image/webpage3.png',
