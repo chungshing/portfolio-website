@@ -10,7 +10,7 @@ const PROJECTS = [
     {
         title: 'F1 Race Intelligence Dashboard',
         description:
-            'Started as a way to combine my interest in Formula 1 with learning full-stack development. It now pulls in race data, processes it, and surfaces strategy insights through an interactive dashboard.',
+            'Started as a way to combine my interest in Formula 1 with learning full-stack development. It now ingests race data, processes it, and surfaces strategy insights through an interactive dashboard.',
         note: '✦ Running live with automated race data updates.',
         stack: ['Spring Boot', 'Next.js', 'PostgreSQL', 'REST API'],
         github: 'https://github.com/chungshing/f1-race-intelligence-dashboard',
@@ -20,7 +20,7 @@ const PROJECTS = [
         title: 'Golf Swing AI Analysis',
         description:
             'What if a golf swing could be broken down frame by frame and explained like a coach would? This project explores that idea using computer vision and machine learning to turn swing videos into actionable feedback.',
-        note: '✦ Built alongside an industry partner through SIT.',
+        note: '✦ Built alongside an industry partner through SIT. Code private due to NDA.',
         stack: [
             'Python',
             'Computer Vision',
@@ -37,7 +37,7 @@ const PROJECTS = [
     {
         title: 'Hospitality Booking Platform',
         description:
-            'Behind every hotel booking is a series of moving parts — availability checks, user authentication, reservation logic. Building this platform meant designing and connecting those pieces into one cohesive full-stack system.',
+            'Behind every hotel booking is a series of moving parts — availability checks, user authentication, reservation logic. Building it meant connecting those moving parts into one cohesive full-stack system.',
         note: '✦ Exploring SQL and NoSQL in one booking platform.',
         stack: ['Node.js', 'EJS', 'MySQL', 'MongoDB'],
         github: 'https://github.com/chungshing/hospitality-booking-platform',
@@ -77,23 +77,23 @@ const EXPERIENCE = [
         org: 'STMicroelectronics • Singapore',
         period: 'May 2025 — Apr 2026',
         description:
-            'Spent a year building and maintaining production-critical Manufacturing Execution System (MES) applications used in semiconductor manufacturing. Working closely with process engineers, I translated manufacturing requirements into full-stack solutions that improved workflows, reliability, and day-to-day operations.',
+            'I built full-stack MES applications for semiconductor manufacturing, turning manual processes into workflows that actually made sense.',
         highlights: [
-            'Built production-ready full-stack workflows using Java and JavaScript.',
-            'Automated manufacturing processes, reducing manual tracking effort by around 80%.',
-            'Designed validation and approval flows that improved data integrity and real-time visibility.',
+            'Developed production-ready full-stack MES applications using Java and JavaScript.',
+            'Automated multiple manufacturing workflows, cutting manual tracking effort by around 80%.',
+            'Designed validation and approval workflows that improved data integrity and operational visibility.',
         ],
     },
     {
         role: 'Software Developer / Tester Intern',
         org: 'NCS Pte Ltd • Singapore',
-        period: 'Mar 2023 — Aug 2023',
+        period: 'Aug 2019 — Feb 2020',
         description:
-            'My first experience working within a professional software team, contributing to both development and quality assurance. It gave me a better understanding of how features move from implementation to testing before reaching production.',
+            'My first real experience shipping code — backend APIs, testing, deployment, and everything in between.',
         highlights: [
             'Developed backend APIs and CRUD functionality using Java.',
-            'Built responsive web pages with HTML and JavaScript.',
-            'Performed QA testing and helped ensure stable production releases.',
+            'Built responsive web interfaces with HTML, CSS, and JavaScript.',
+            'Performed functional and regression testing to support stable production releases.',
         ],
     },
 ];
@@ -104,7 +104,7 @@ const EDUCATION = [
         org: 'Singapore Institute of Technology • Singapore',
         period: '2022 — 2026',
         description:
-            'This was where I built the foundations of software engineering through coursework, internships, and plenty of late-night debugging sessions. It also gave me opportunities to work on research and larger team projects outside the classroom.',
+            'Four years turning lecture-hall theory into internships, projects, and one unexpected research paper on vishing attacks.',
         link: {
             label: 'Read →',
             title: 'Co-authored "An Effective Approach to Detecting Vishing Attacks..."',
@@ -116,7 +116,7 @@ const EDUCATION = [
         org: 'Nanyang Polytechnic • Singapore',
         period: '2019 — 2022',
         description:
-            'Built my foundations in programming, web development, databases, and software design while discovering a passion for creating practical applications.',
+            'I built a strong foundation in programming, web development, databases, and software engineering — the starting point for everything that followed.',
     },
 ];
 
@@ -140,11 +140,10 @@ export default function App() {
                             <h2>About Me</h2>
                             <p className='subtitle'>Slow builds, steady progress.</p>
                             <p style={{ marginTop: 18 }}>
-                                I like pulling ideas apart to understand how they work, then
-                                rebuilding them into something practical. Most of what I enjoy
-                                building are backend-heavy applications, full-stack projects, and
-                                tools that solve real problems while helping me better understand
-                                the systems behind them.
+                                I enjoy understanding how software works beneath the UI. Most of
+                                what I build leans toward backend systems, full-stack applications,
+                                and automation—building solutions that solve real problems while
+                                teaching me something new.
                             </p>
                             <p>
                                 Most projects begin with a question—an API I want to explore, a
@@ -299,7 +298,7 @@ export default function App() {
                         <section id='contact'>
                             <p className='eyebrow'>leave a note</p>
                             <h2>Let's Connect</h2>
-                            <p className='subtitle'>Coffee's on, let's talk.</p>
+                            <p className='subtitle'>Coffee's on me. Let's build something.</p>
                             <p style={{ marginTop: 18 }}>
                                 Reach out on{' '}
                                 <a
@@ -325,7 +324,7 @@ export default function App() {
             </div>
 
             <footer className='site-footer mono'>
-                <p className='footer-thanks'>Thanks for reading a few pages from my notebook.</p>
+                <p className='footer-thanks'>Thanks for reading a page from my notebook.</p>
                 <p className='footer-quote'>build · break · learn · repeat</p>
                 <p className='footer-copyright'>© {new Date().getFullYear()} Chung Shing</p>
             </footer>
