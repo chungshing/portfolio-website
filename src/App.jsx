@@ -13,8 +13,18 @@ const PROJECTS = [
             'Started as a way to combine my interest in Formula 1 with learning full-stack development. It now ingests race data, processes it, and surfaces strategy insights through an interactive dashboard.',
         note: '✦ Running live with automated race data updates.',
         stack: ['Spring Boot', 'Next.js', 'PostgreSQL', 'REST API'],
-        github: 'https://github.com/chungshing/f1-race-intelligence-dashboard',
-        demo: 'https://f1-race-intelligence-dashboard.vercel.app',
+        links: [
+            {
+                type: 'demo',
+                label: 'Live Demo',
+                url: 'https://f1-race-intelligence-dashboard.vercel.app',
+            },
+            {
+                type: 'github',
+                label: 'GitHub',
+                url: 'https://github.com/chungshing/f1-race-intelligence-dashboard',
+            },
+        ],
     },
     {
         title: 'Golf Swing AI Analysis',
@@ -31,8 +41,13 @@ const PROJECTS = [
             'MongoDB',
             'Google Cloud',
         ],
-        github: null,
-        video: 'https://chungshing.github.io/portfolio-assets/video/golf.mp4',
+        links: [
+            {
+                type: 'video',
+                label: 'Watch Video',
+                url: 'https://chungshing.github.io/portfolio-assets/video/golf.mp4',
+            },
+        ],
     },
     {
         title: 'Hospitality Booking Platform',
@@ -40,13 +55,18 @@ const PROJECTS = [
             'Behind every hotel booking is a series of moving parts — availability checks, user authentication, reservation logic. Building it meant connecting those moving parts into one cohesive full-stack system.',
         note: '✦ Exploring SQL and NoSQL in one booking platform.',
         stack: ['Node.js', 'EJS', 'MySQL', 'MongoDB'],
-        github: null,
-        screenshots: [
-            'https://chungshing.github.io/portfolio-assets/image/webpage1.png',
-            'https://chungshing.github.io/portfolio-assets/image/webpage2.png',
-            'https://chungshing.github.io/portfolio-assets/image/webpage3.png',
-            'https://chungshing.github.io/portfolio-assets/image/webpage4.png',
-            'https://chungshing.github.io/portfolio-assets/image/webpage5.png',
+        links: [
+            {
+                type: 'screenshots',
+                label: 'View Screenshots',
+                images: [
+                    'https://chungshing.github.io/portfolio-assets/image/webpage1.png',
+                    'https://chungshing.github.io/portfolio-assets/image/webpage2.png',
+                    'https://chungshing.github.io/portfolio-assets/image/webpage3.png',
+                    'https://chungshing.github.io/portfolio-assets/image/webpage4.png',
+                    'https://chungshing.github.io/portfolio-assets/image/webpage5.png',
+                ],
+            },
         ],
     },
 ];
@@ -241,35 +261,34 @@ export default function App() {
                                             ))}
                                         </div>
                                         <div className='project-actions'>
-                                            {p.screenshots && (
-                                                <button
-                                                    className='project-btn project-btn-primary'
-                                                    onClick={() => {
-                                                        setImageGallery(p.screenshots);
-                                                        setCurrentImage(0);
-                                                    }}
-                                                >
-                                                    View Screenshots →
-                                                </button>
-                                            )}
-                                            {p.video && (
-                                                <button
-                                                    className='project-btn project-btn-primary'
-                                                    onClick={() => setVideoModal(p.video)}
-                                                >
-                                                    Live Demo →
-                                                </button>
-                                            )}
-                                            {p.github && (
-                                                <a
-                                                    className='project-btn'
-                                                    href={p.github}
-                                                    target='_blank'
-                                                    rel='noreferrer'
-                                                >
-                                                    GitHub →
-                                                </a>
-                                            )}
+                                            {p.links.map((link, i) => {
+                                                if (link.type === 'screenshots') {
+                                                    return (
+                                                        <button
+                                                            key={i}
+                                                            className='project-btn project-btn-primary'
+                                                            onClick={() => {
+                                                                setImageGallery(link.images);
+                                                                setCurrentImage(0);
+                                                            }}
+                                                        >
+                                                            {link.label} →
+                                                        </button>
+                                                    );
+                                                }
+
+                                                return (
+                                                    <a
+                                                        key={i}
+                                                        className='project-btn project-btn-primary'
+                                                        href={link.url}
+                                                        target='_blank'
+                                                        rel='noreferrer'
+                                                    >
+                                                        {link.label} →
+                                                    </a>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 ))}

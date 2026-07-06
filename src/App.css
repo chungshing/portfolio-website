@@ -591,6 +591,18 @@ section h2 {
     gap: 8px;
 }
 
+.tag {
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.tag:hover {
+    transform: translateY(-1px);
+    background: var(--bg-soft);
+    border-color: var(--accent-amber);
+}
+
 .site-footer {
     flex-shrink: 0;
     text-align: center;
