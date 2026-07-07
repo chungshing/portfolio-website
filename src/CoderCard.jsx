@@ -42,6 +42,7 @@ export default function CoderCard() {
                 src='https://chungshing.github.io/portfolio-assets/image/coder.png'
                 alt='Illustration of a developer coding at a desk'
                 className='coder-card-img'
+                loading='lazy'
             />
 
             <p className='coder-card-caption'>plan. code. repeat.</p>

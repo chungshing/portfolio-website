@@ -60,12 +60,30 @@ const PROJECTS = [
                 type: 'screenshots',
                 label: 'View Screenshots',
                 images: [
-                    'https://chungshing.github.io/portfolio-assets/image/archDiagram.png',
-                    'https://chungshing.github.io/portfolio-assets/image/webpage1.png',
-                    'https://chungshing.github.io/portfolio-assets/image/webpage2.png',
-                    'https://chungshing.github.io/portfolio-assets/image/webpage3.png',
-                    'https://chungshing.github.io/portfolio-assets/image/webpage4.png',
-                    'https://chungshing.github.io/portfolio-assets/image/webpage5.png',
+                    {
+                        url: 'https://chungshing.github.io/portfolio-assets/image/archDiagram.png',
+                        alt: 'System architecture diagram for the Hospitality Booking Platform',
+                    },
+                    {
+                        url: 'https://chungshing.github.io/portfolio-assets/image/webpage1.png',
+                        alt: 'Hostel landing page screenshot',
+                    },
+                    {
+                        url: 'https://chungshing.github.io/portfolio-assets/image/webpage2.png',
+                        alt: 'Hostel listing page screenshot',
+                    },
+                    {
+                        url: 'https://chungshing.github.io/portfolio-assets/image/webpage3.png',
+                        alt: 'Hostel detail page screenshot',
+                    },
+                    {
+                        url: 'https://chungshing.github.io/portfolio-assets/image/webpage4.png',
+                        alt: 'Hostel detail page screenshot, scrolled down',
+                    },
+                    {
+                        url: 'https://chungshing.github.io/portfolio-assets/image/webpage5.png',
+                        alt: 'Hostel detail page screenshot, scrolled down further',
+                    },
                 ],
             },
         ],
@@ -423,9 +441,10 @@ export default function App() {
                         <h3 className='image-title'>Hospitality Booking Platform</h3>
 
                         <img
-                            src={imageGallery[currentImage]}
-                            alt={`Hospitality Booking Platform screenshot ${currentImage + 1} of ${imageGallery.length}`}
+                            src={imageGallery[currentImage].url}
+                            alt={imageGallery[currentImage].alt}
                             className='viewer-image'
+                            loading='lazy'
                         />
 
                         <div className='viewer-controls'>
