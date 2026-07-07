@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import CoderCard from './CoderCard.jsx';
 import ContactForm from './ContactForm.jsx';
@@ -154,6 +154,31 @@ export default function App() {
     const [imageGallery, setImageGallery] = useState(null);
     const [currentImage, setCurrentImage] = useState(0);
 
+    useEffect(() => {
+        if (!imageGallery) return;
+
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') setImageGallery(null);
+            if (e.key === 'ArrowLeft') setCurrentImage((i) => Math.max(0, i - 1));
+            if (e.key === 'ArrowRight')
+                setCurrentImage((i) => Math.min(imageGallery.length - 1, i + 1));
+        };
+
+        window.addEventListener('keydown', onKeyDown);
+        return () => window.removeEventListener('keydown', onKeyDown);
+    }, [imageGallery]);
+
+    useEffect(() => {
+        if (!videoModal) return;
+
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') setVideoModal(null);
+        };
+
+        window.addEventListener('keydown', onKeyDown);
+        return () => window.removeEventListener('keydown', onKeyDown);
+    }, [videoModal]);
+
     return (
         <div className='page'>
             <div className='layout'>
@@ -278,6 +303,18 @@ export default function App() {
                                                     );
                                                 }
 
+                                                if (link.type === 'video') {
+                                                    return (
+                                                        <button
+                                                            key={i}
+                                                            className='project-btn project-btn-primary'
+                                                            onClick={() => setVideoModal(link.url)}
+                                                        >
+                                                            {link.label} →
+                                                        </button>
+                                                    );
+                                                }
+
                                                 return (
                                                     <a
                                                         key={i}
@@ -368,7 +405,7 @@ export default function App() {
                         >
                             ✕
                         </button>
-                        <video src={videoModal} controls autoPlay />
+                        <video src={videoModal} controls autoPlay muted />
                     </div>
                 </div>
             )}
@@ -385,7 +422,11 @@ export default function App() {
 
                         <h3 className='image-title'>Hospitality Booking Platform</h3>
 
-                        <img src={imageGallery[currentImage]} alt='' className='viewer-image' />
+                        <img
+                            src={imageGallery[currentImage]}
+                            alt={`Hospitality Booking Platform screenshot ${currentImage + 1} of ${imageGallery.length}`}
+                            className='viewer-image'
+                        />
 
                         <div className='viewer-controls'>
                             <button
