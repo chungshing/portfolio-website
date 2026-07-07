@@ -152,7 +152,7 @@ const EDUCATION = [
             'Four years turning lecture-hall theory into internships, projects, and one unexpected research paper on vishing attacks.',
         link: {
             label: 'Read →',
-            title: 'Co-authored "An Effective Approach to Detecting Vishing Attacks..."',
+            title: '✦ Published at IEEE SOLI 2023 • Detecting Vishing Attacks...',
             href: 'https://ieeexplore.ieee.org/document/10425272',
         },
     },
@@ -271,12 +271,14 @@ export default function App() {
                                         )}
                                         {e.link && (
                                             <p className='journey-link mono'>
-                                                ✦ {e.link.title} —{' '}
+                                                <span className='journey-link-title'>
+                                                    {e.link.title}
+                                                </span>
                                                 <a
                                                     href={e.link.href}
                                                     target='_blank'
                                                     rel='noreferrer'
-                                                    className='link-underline'
+                                                    className='project-btn project-btn-primary'
                                                 >
                                                     {e.link.label}
                                                 </a>

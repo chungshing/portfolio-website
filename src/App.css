@@ -697,10 +697,16 @@ section h2 {
     line-height: 1.5;
 }
 
-.journey-link .link-underline {
-    white-space: nowrap;
+.journey-link-title {
+    color: var(--text);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
 }
 
+.journey-link .project-btn {
+    margin: 0;
+}
 /* responsive: stack vertically, page scrolls normally */
 @media (max-width: 900px) {
     html,
