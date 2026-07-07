@@ -211,18 +211,20 @@ export default function App() {
                             <p className='eyebrow'>behind the keyboard</p>
                             <h2>About Me</h2>
                             <p className='subtitle'>Slow builds, steady progress.</p>
-                            <p style={{ marginTop: 18 }}>
-                                I enjoy understanding how software works beneath the UI. Most of
-                                what I build leans toward backend systems, full-stack applications,
-                                and automation—building solutions that solve real problems while
-                                teaching me something new.
-                            </p>
-                            <p>
-                                Most projects begin with a question—an API I want to explore, a
-                                workflow I think could be smoother, or a dataset that deserves a
-                                better way to be visualized. I'd rather ship something small and
-                                working than plan something perfect and stalled.
-                            </p>
+                            <div className='card'>
+                                <p style={{ marginTop: 0 }}>
+                                    I enjoy understanding how software works beneath the UI. Most of
+                                    what I build leans toward backend systems, full-stack
+                                    applications, and automation—building solutions that solve real
+                                    problems while teaching me something new.
+                                </p>
+                                <p style={{ marginBottom: 0 }}>
+                                    Most projects begin with a question—an API I want to explore, a
+                                    workflow I think could be smoother, or a dataset that deserves a
+                                    better way to be visualized. I'd rather ship something small and
+                                    working than plan something perfect and stalled.
+                                </p>
+                            </div>
                             <p className='margin-note'>✎ curiosity is where my projects begin</p>
                         </section>
 
@@ -359,7 +361,7 @@ export default function App() {
                             <p className='subtitle'>Tools I reach for.</p>
                             <div className='stack-columns'>
                                 {Object.entries(STACK).map(([group, tools]) => (
-                                    <div className='stack-group' key={group}>
+                                    <div className='card stack-group' key={group}>
                                         <p className='stack-group-label mono'>{group}</p>
                                         <div className='stack-grid'>
                                             {tools.map((t) => (
@@ -371,6 +373,7 @@ export default function App() {
                                     </div>
                                 ))}
                             </div>
+
                             <p className='margin-note'>
                                 ✎ The stack changes, but the goal stays the same: build something
                                 useful.
@@ -383,19 +386,21 @@ export default function App() {
                             <p className='eyebrow'>leave a note</p>
                             <h2>Let's Connect</h2>
                             <p className='subtitle'>Coffee's on me. Let's build something.</p>
-                            <p style={{ marginTop: 18 }}>
-                                Reach out on{' '}
-                                <a
-                                    className='link-underline'
-                                    href='https://github.com/chungshing'
-                                    target='_blank'
-                                    rel='noreferrer'
-                                >
-                                    GitHub
-                                </a>{' '}
-                                or drop a note below.
-                            </p>
-                            <ContactForm />
+                            <div className='card'>
+                                <p style={{ marginTop: 0 }}>
+                                    Reach out on{' '}
+                                    <a
+                                        className='link-underline'
+                                        href='https://github.com/chungshing'
+                                        target='_blank'
+                                        rel='noreferrer'
+                                    >
+                                        GitHub
+                                    </a>{' '}
+                                    or drop a note below.
+                                </p>
+                                <ContactForm />
+                            </div>
                         </section>
                     </main>
 
