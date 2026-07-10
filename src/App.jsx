@@ -118,8 +118,11 @@ const STACK = {
 
 const EXPERIENCE = [
     {
-        role: 'MES Software Engineer Intern',
-        org: 'STMicroelectronics • Singapore',
+        role: 'MES Software Engineer',
+        company: 'STMicroelectronics',
+        type: 'Internship',
+        location: 'Singapore',
+        mode: 'Hybrid',
         period: 'May 2025 — Apr 2026',
         description:
             'I built full-stack MES applications for semiconductor manufacturing, turning manual processes into workflows that actually made sense.',
@@ -130,8 +133,11 @@ const EXPERIENCE = [
         ],
     },
     {
-        role: 'Software Developer / Tester Intern',
-        org: 'NCS Pte Ltd • Singapore',
+        role: 'Software Developer / Tester',
+        company: 'NCS Pte Ltd',
+        type: 'Internship',
+        location: 'Singapore',
+        mode: 'On-site',
         period: 'Aug 2019 — Feb 2020',
         description:
             'My first real experience shipping code — backend APIs, testing, deployment, and everything in between.',
@@ -252,9 +258,24 @@ export default function App() {
 
                             <div className='project-list'>
                                 {(journeyTab === 'experience' ? EXPERIENCE : EDUCATION).map((e) => (
-                                    <div className='card journey-card' key={e.role + e.org}>
-                                        <h3>{e.role}</h3>
-                                        <p className='journey-org'>{e.org}</p>
+                                    <div
+                                        className='card journey-card'
+                                        key={e.role + (e.company || e.org)}
+                                    >
+                                        {journeyTab === 'experience' ? (
+                                            <>
+                                                <h3>{e.company}</h3>
+                                                <p className='journey-role'>{e.role}</p>
+                                                <p className='journey-meta mono'>
+                                                    {e.type} • {e.location} • {e.mode}
+                                                </p>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <h3>{e.role}</h3>
+                                                <p className='journey-org'>{e.org}</p>
+                                            </>
+                                        )}
                                         <p
                                             className='mono hero-status'
                                             style={{ height: 'auto', marginBottom: 6 }}
