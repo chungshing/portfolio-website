@@ -95,6 +95,8 @@ const STACK = {
         { name: 'React', icon: 'devicon-react-original colored' },
         { name: 'Next.js', icon: 'devicon-nextjs-plain' },
         { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+        { name: 'HTML5', icon: 'devicon-html5-plain colored' },
+        { name: 'CSS3', icon: 'devicon-css3-plain colored' },
     ],
     Backend: [
         { name: 'Java', icon: 'devicon-java-plain colored' },

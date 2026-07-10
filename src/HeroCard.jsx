@@ -7,11 +7,15 @@ function useTypewriter(phrases, speed = 55, pause = 1400) {
     const [text, setText] = useState('');
     const [i, setI] = useState(0);
     const [deleting, setDeleting] = useState(false);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     useEffect(() => {
+        if (reduced) {
+            setText(phrases[0]);
+            return;
+        }
         const current = phrases[i % phrases.length];
         let timeout;
-
         if (!deleting && text === current) {
             timeout = setTimeout(() => setDeleting(true), pause);
         } else if (deleting && text === '') {
@@ -19,18 +23,15 @@ function useTypewriter(phrases, speed = 55, pause = 1400) {
             setI((n) => n + 1);
         } else {
             timeout = setTimeout(
-                () => {
-                    setText(current.slice(0, deleting ? text.length - 1 : text.length + 1));
-                },
+                () => setText(current.slice(0, deleting ? text.length - 1 : text.length + 1)),
                 deleting ? speed / 2 : speed
             );
         }
         return () => clearTimeout(timeout);
-    }, [text, deleting, i, phrases, speed, pause]);
+    }, [text, deleting, i, phrases, speed, pause, reduced]);
 
     return text;
 }
-
 const LINKS = [
     {
         icon: Linkedin,
