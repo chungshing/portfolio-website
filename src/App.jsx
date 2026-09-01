@@ -317,7 +317,7 @@ export default function App() {
                         <section id='projects'>
                             <p className='eyebrow'>pages from the notebook</p>
                             <h2>Featured Work</h2>
-                            <p className='subtitle'>Projects that taught me something.</p>
+                            <p className='subtitle'>Things I've built along the way.</p>
                             <div className='project-list'>
                                 {PROJECTS.map((p) => (
                                     <div className='card project-card' key={p.title}>
