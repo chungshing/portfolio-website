@@ -88,6 +88,25 @@ const PROJECTS = [
             },
         ],
     },
+    {
+        title: 'Yelp Big Data Pipeline',
+        description:
+            'Explored how large datasets can be processed beyond a traditional application. Built a distributed data pipeline using Hadoop and Spark to store, clean, transform, analyse, and visualize the Yelp Open Dataset.',
+        note: '✦ From raw JSON to distributed processing and data-driven insights.',
+        stack: ['Java', 'Hadoop', 'HDFS', 'Spark', 'Python', 'Data Visualization'],
+        links: [
+            {
+                type: 'github',
+                label: 'View Analysis',
+                url: 'https://github.com/chungshing/yelp-data-pipeline/blob/main/Part%205%20Data%20Visualization/yelp_data_analysis.ipynb',
+            },
+            {
+                type: 'github',
+                label: 'GitHub',
+                url: 'https://github.com/chungshing/yelp-data-pipeline',
+            },
+        ],
+    },
 ];
 
 const STACK = {
