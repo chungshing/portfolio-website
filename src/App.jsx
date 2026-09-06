@@ -440,34 +440,12 @@ export default function App() {
                             <h2>Let's Connect</h2>
                             <p className='subtitle'>Coffee's on me. Let's build something.</p>
                             <div className='card'>
-                                <p style={{ marginTop: 0 }}>
-                                    Coffee's on me — happy to chat about roles, projects, or
-                                    anything backend and full-stack.
-                                </p>
-                                <div className='project-actions' style={{ marginBottom: 22 }}>
-                                    <a
-                                        className='project-btn project-btn-primary'
-                                        href='https://github.com/chungshing'
-                                        target='_blank'
-                                        rel='noreferrer'
-                                    >
-                                        GitHub →
-                                    </a>
-                                    <a
-                                        className='project-btn project-btn-primary'
-                                        href='https://www.linkedin.com/in/chungshinglai/'
-                                        target='_blank'
-                                        rel='noreferrer'
-                                    >
-                                        LinkedIn →
-                                    </a>
-                                </div>
                                 <ContactForm />
                             </div>
                         </section>
                     </main>
                 </div>
-                <LofiBar /> 
+                <LofiBar />
 
                 <aside className='nav-col'>
                     <Navbar scrollRef={contentRef} />
