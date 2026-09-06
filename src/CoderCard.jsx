@@ -1,42 +1,14 @@
-import { useEffect, useState } from 'react';
-
-const DRINKS = ['Espresso', 'Cortado', 'Flat White', 'Latte', 'Cappuccino', 'Mocha'];
+const CURRENTLY = [
+    '→ job hunting: backend + full-stack roles',
+    '→ exploring AI agents',
+    '→ building: sports betting tracker/analysis (Python) — private',
+    '→ tinkering: F1 dashboard (Spring Boot + Next.js)',
+];
 
 export default function CoderCard() {
-    const [drinkIndex, setDrinkIndex] = useState(() => Math.floor(Math.random() * DRINKS.length));
-    const [fade, setFade] = useState(true);
-
-    useEffect(() => {
-        const id = setInterval(() => {
-            // Fade out
-            setFade(false);
-
-            setTimeout(() => {
-                setDrinkIndex((current) => {
-                    let next;
-
-                    do {
-                        next = Math.floor(Math.random() * DRINKS.length);
-                    } while (next === current);
-
-                    return next;
-                });
-
-                // Fade back in
-                setFade(true);
-            }, 200);
-        }, 5500);
-
-        return () => clearInterval(id);
-    }, []);
-
     return (
         <div className='coder-card'>
-            <p className='coder-card-label mono'>☕ Today's Special</p>
-
-            <h3 className={`coder-card-drink mono ${fade ? 'visible' : 'hidden'}`}>
-                {DRINKS[drinkIndex]}
-            </h3>
+            <span className='coder-card-tape' aria-hidden='true' />
 
             <img
                 src='https://chungshing.github.io/portfolio-assets/image/coder.png'
@@ -45,7 +17,15 @@ export default function CoderCard() {
                 loading='lazy'
             />
 
-            <p className='coder-card-caption'>plan. code. repeat.</p>
+            <p className='coder-card-label mono'>currently</p>
+
+            <ul className='coder-card-list'>
+                {CURRENTLY.map((line) => (
+                    <li key={line} className='mono'>
+                        {line}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }

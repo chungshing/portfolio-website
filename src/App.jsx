@@ -232,6 +232,15 @@ export default function App() {
                     <CoderCard />
                 </aside>
 
+                <div className='spine' aria-hidden='true'>
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                </div>
+
                 <div className='content-wrap'>
                     <main className='content-col' ref={contentRef}>
                         <section id='about'>

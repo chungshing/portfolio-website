@@ -49,7 +49,7 @@ export default function HeroCard() {
     return (
         <div className='hero-card'>
             <p className='eyebrow'>developer's corner</p>
-            <h1 className='mono'>Chung Shing</h1>
+            <h1 className='hero-name'>Chung Shing</h1>
             <p className='hero-role mono'>Software Engineer, Singapore</p>
             <p className='hero-tagline'>
                 Turning ideas into software,
