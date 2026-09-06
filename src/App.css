@@ -38,8 +38,8 @@
 .hero-col {
     width: 260px;
     flex-shrink: 0;
-    height: calc(100% - 150px);
-    margin: 60px 0 90px;
+    height: calc(100% - 120px);
+    margin: 60px 0 48px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -266,8 +266,8 @@
 .spine {
     width: 28px;
     flex-shrink: 0;
-    height: calc(100% - 150px);
-    margin: 60px 0 90px;
+    height: calc(100% - 120px);
+    margin: 60px 0 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -298,8 +298,8 @@
 .nav-col {
     width: 150px;
     flex-shrink: 0;
-    height: calc(100% - 150px);
-    margin: 60px 0 90px;
+    height: calc(100% - 120px);
+    margin: 60px 0 48px;
     display: flex;
     align-items: flex-start;
     padding-top: 8px;
@@ -312,8 +312,8 @@
     flex: 1;
     min-width: 0;
     max-width: 720px;
-    height: calc(100% - 150px);
-    margin: 60px 0 90px;
+    height: calc(100% - 120px);
+    margin: 60px 0 48px;
 }
 
 .content-col {
