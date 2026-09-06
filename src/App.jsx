@@ -232,6 +232,15 @@ export default function App() {
                     <CoderCard />
                 </aside>
 
+                <div className='spine' aria-hidden='true'>
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                    <span className='spine-ring' />
+                </div>
+
                 <div className='content-wrap'>
                     <main className='content-col' ref={contentRef}>
                         <section id='about'>
@@ -431,29 +440,17 @@ export default function App() {
                             <h2>Let's Connect</h2>
                             <p className='subtitle'>Coffee's on me. Let's build something.</p>
                             <div className='card'>
-                                <p style={{ marginTop: 0 }}>
-                                    Reach out on{' '}
-                                    <a
-                                        className='link-underline'
-                                        href='https://github.com/chungshing'
-                                        target='_blank'
-                                        rel='noreferrer'
-                                    >
-                                        GitHub
-                                    </a>{' '}
-                                    or drop a note below.
-                                </p>
                                 <ContactForm />
                             </div>
                         </section>
                     </main>
-
-                    <LofiBar />
                 </div>
 
                 <aside className='nav-col'>
                     <Navbar scrollRef={contentRef} />
                 </aside>
+
+                <LofiBar />
             </div>
 
             <footer className='site-footer mono'>

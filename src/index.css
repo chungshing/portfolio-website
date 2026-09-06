@@ -1,16 +1,24 @@
 :root {
     /* color */
-    --bg: #1d2021;
-    --bg-soft: #282828;
-    --surface: #2f2a27;
-    --surface-hover: #3c3836;
-    --border: #45403d;
-    --text: #ebdbb2;
-    --text-dim: #a89984;
-    --text-faint: #9a8c7d;
-    --accent-rust: #d65d0e;
-    --accent-amber: #d79921;
-    --accent-green: #98971a;
+    --bg: #24211d;
+    --bg-soft: #34302a;
+    --surface: #4d4335;
+    --surface-hover: #5a4f3f;
+    --border: #8a7d61;
+    --border-strong: #9c8f72;
+    --text: #fcf5df;
+    --text-dim: #e2d3ac;
+    --text-faint: #cab994;
+    --accent-rust: #ef8330;
+    --accent-amber: #f4bb3d;
+    --accent-amber-strong: #ffd166;
+    --accent-green: #a9a824;
+
+    /* notebook accents */
+    --margin-red: #d35b5b;
+    --rule-line: rgba(249, 241, 216, 0.07);
+    --tape: rgba(244, 187, 61, 0.28);
+    --font-hand: 'Caveat', cursive;
 
     /* type */
     --font-display: 'Fira Code', monospace;
@@ -54,8 +62,8 @@ body {
     margin: 0;
     background: var(--bg);
     background-image:
-        radial-gradient(ellipse 900px 500px at 15% -10%, rgba(215, 153, 33, 0.06), transparent),
-        radial-gradient(ellipse 700px 500px at 100% 20%, rgba(214, 93, 14, 0.05), transparent);
+        radial-gradient(ellipse 900px 500px at 15% -10%, rgba(244, 187, 61, 0.08), transparent),
+        radial-gradient(ellipse 700px 500px at 100% 20%, rgba(239, 131, 48, 0.06), transparent);
     color: var(--text);
     font-family: var(--font-body);
     line-height: 1.7;
@@ -127,7 +135,9 @@ h3 {
 }
 
 p {
-    color: var(--text-dim);
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.75;
     margin: 0 0 16px;
 }
 
