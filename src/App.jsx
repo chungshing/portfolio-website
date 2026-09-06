@@ -441,17 +441,27 @@ export default function App() {
                             <p className='subtitle'>Coffee's on me. Let's build something.</p>
                             <div className='card'>
                                 <p style={{ marginTop: 0 }}>
-                                    Reach out on{' '}
+                                    Coffee's on me — happy to chat about roles, projects, or
+                                    anything backend and full-stack.
+                                </p>
+                                <div className='project-actions' style={{ marginBottom: 22 }}>
                                     <a
-                                        className='link-underline'
+                                        className='project-btn project-btn-primary'
                                         href='https://github.com/chungshing'
                                         target='_blank'
                                         rel='noreferrer'
                                     >
-                                        GitHub
-                                    </a>{' '}
-                                    or drop a note below.
-                                </p>
+                                        GitHub →
+                                    </a>
+                                    <a
+                                        className='project-btn project-btn-primary'
+                                        href='https://www.linkedin.com/in/chungshinglai/'
+                                        target='_blank'
+                                        rel='noreferrer'
+                                    >
+                                        LinkedIn →
+                                    </a>
+                                </div>
                                 <ContactForm />
                             </div>
                         </section>

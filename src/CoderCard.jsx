@@ -1,3 +1,5 @@
+import { Pin } from 'lucide-react';
+
 const CURRENTLY = [
     '→ job hunting: backend + full-stack roles',
     '→ exploring AI agents',
@@ -8,7 +10,9 @@ const CURRENTLY = [
 export default function CoderCard() {
     return (
         <div className='coder-card'>
-            <span className='coder-card-tape' aria-hidden='true' />
+            <span className='coder-card-pin' aria-hidden='true'>
+                <Pin size={16} strokeWidth={2} fill='currentColor' />
+            </span>
 
             <img
                 src='https://chungshing.github.io/portfolio-assets/image/coder.png'

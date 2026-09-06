@@ -133,7 +133,9 @@ h3 {
 }
 
 p {
-    color: var(--text-dim);
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.75;
     margin: 0 0 16px;
 }
 
