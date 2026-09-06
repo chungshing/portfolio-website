@@ -151,6 +151,7 @@
     font-size: 0.78rem;
     border: 1px solid var(--border);
     border-radius: 6px;
+    position: relative;
     transition:
         color 0.2s ease,
         background 0.2s ease,
@@ -170,14 +171,31 @@
 }
 
 .hero-link-row:hover {
-    color: var(--accent-amber);
+    color: var(--accent-rust);
     background: var(--bg-soft);
-    border-color: var(--accent-amber);
+    border-color: var(--accent-rust);
 }
 
 .hero-link-row:hover .hero-link-arrow {
     opacity: 1;
     transform: translateX(3px);
+}
+
+.hero-link-row::after {
+    content: '';
+    position: absolute;
+    left: 36px;
+    right: 14px;
+    bottom: 6px;
+    height: 1.5px;
+    background: var(--accent-rust);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.hero-link-row:hover::after {
+    transform: scaleX(1);
 }
 
 /* second sidebar card: "currently" sticky note */
@@ -252,13 +270,11 @@
 }
 
 .hero-card:hover {
-    transform: rotate(-0.4deg) translateY(-2px);
     border-color: rgba(214, 153, 54, 0.25);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.38);
 }
 
 .coder-card:hover {
-    transform: rotate(1deg) translateY(-2px);
     border-color: rgba(214, 153, 54, 0.25);
 }
 
@@ -704,16 +720,31 @@ section h2 {
 }
 
 .tag {
-    transition:
-        transform 0.15s ease,
-        background 0.15s ease;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.tag::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 3px;
+    height: 1.5px;
+    background: var(--accent-rust);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
 }
 
 .tag:hover {
-    transform: translateY(-1px);
-    background: var(--bg-soft);
-    border-color: var(--accent-amber);
+    color: var(--accent-rust);
 }
+
+.tag:hover::after {
+    transform: scaleX(1);
+}
+
 .site-footer {
     flex-shrink: 0;
     text-align: center;
