@@ -466,9 +466,8 @@ export default function App() {
                             </div>
                         </section>
                     </main>
-
-                    <LofiBar />
                 </div>
+                <LofiBar /> 
 
                 <aside className='nav-col'>
                     <Navbar scrollRef={contentRef} />
