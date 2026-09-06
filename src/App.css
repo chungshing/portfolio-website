@@ -38,8 +38,8 @@
 .hero-col {
     width: 260px;
     flex-shrink: 0;
-    height: calc(100% - 120px);
-    margin: 60px 0 60px;
+    margin: 52px 0 52px;
+    height: calc(100% - 104px);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -203,7 +203,7 @@
     background: var(--surface-hover);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 20px 20px 22px;
+    padding: 16px 16px 16px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -228,7 +228,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-amber-strong);
-    margin: 12px 0 8px;
+    margin: 8px 0 6px;
 }
 
 .coder-card-img {
@@ -282,8 +282,8 @@
 .spine {
     width: 28px;
     flex-shrink: 0;
-    height: calc(100% - 120px);
-    margin: 60px 0 60px;
+    margin: 52px 0 52px;
+    height: calc(100% - 104px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -314,8 +314,8 @@
 .nav-col {
     width: 150px;
     flex-shrink: 0;
-    height: calc(100% - 120px);
-    margin: 60px 0 60px;
+    margin: 52px 0 52px;
+    height: calc(100% - 104px);
     display: flex;
     align-items: flex-start;
     padding-top: 8px;
@@ -328,8 +328,8 @@
     flex: 1;
     min-width: 0;
     max-width: 720px;
-    height: calc(100% - 120px);
-    margin: 60px 0 60px;
+    margin: 52px 0 52px;
+    height: calc(100% - 104px);
 }
 
 .content-col {
@@ -528,6 +528,7 @@ section h2 {
 .project-actions {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
     margin-top: 16px;
 }
 
@@ -748,28 +749,28 @@ section h2 {
 .site-footer {
     flex-shrink: 0;
     text-align: center;
-    padding: 24px 0 16px;
+    padding: 10px 0;
     border-top: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 2px;
 }
 
 .footer-thanks {
     font-family: var(--font-body);
-    font-size: 0.85rem;
-    color: var(--text-dim);
+    font-size: 0.72rem;
+    color: var(--text-faint);
     margin: 0;
 }
 
 .footer-quote {
-    font-size: 0.78rem;
-    color: var(--accent-amber);
+    font-size: 0.68rem;
+    color: var(--text-faint);
     margin: 0;
 }
 
 .footer-copyright {
-    font-size: 0.72rem;
+    font-size: 0.66rem;
     color: var(--text-faint);
     margin: 0;
 }
@@ -914,12 +915,20 @@ section h2 {
         border-bottom: 1px solid var(--border);
     }
 
+    .hero-name {
+        font-size: 1.9rem;
+    }
+
     .spine {
         display: none;
     }
 
     .hero-card::after {
         display: none;
+    }
+
+    .viewer-image {
+        height: 60vh;
     }
 
     .nav-col {
@@ -964,6 +973,10 @@ section h2 {
         border-bottom-color: var(--accent-amber);
     }
 
+    .navbar-link::after {
+        display: none;
+    }
+
     .content-wrap {
         height: auto;
         margin: 0;
@@ -980,10 +993,10 @@ section h2 {
         left: 14px;
     }
     .content-col section {
-        padding: 56px 0 0;
+        padding: 32px 0 0;
     }
     .content-col section:first-of-type {
-        padding-top: 40px;
+        padding-top: 24px;
     }
 
     .lofi-bar {
