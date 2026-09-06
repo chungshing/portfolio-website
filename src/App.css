@@ -401,7 +401,7 @@
 .form-row input,
 .form-row textarea {
     background: var(--bg-soft);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     border-radius: 6px;
     padding: 9px 12px;
     color: var(--text);
@@ -843,8 +843,7 @@ section h2 {
 
 .journey-meta {
     font-size: 0.78rem;
-    color: var(--text-faint);
-    opacity: 0.75;
+    color: var(--text-dim);
     margin-bottom: 8px;
 }
 
