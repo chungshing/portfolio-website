@@ -39,7 +39,7 @@
     width: 260px;
     flex-shrink: 0;
     height: calc(100% - 120px);
-    margin: 60px 0 48px;
+    margin: 60px 0 60px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -227,7 +227,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--accent-amber);
+    color: var(--accent-amber-strong);
     margin: 12px 0 8px;
 }
 
@@ -283,7 +283,7 @@
     width: 28px;
     flex-shrink: 0;
     height: calc(100% - 120px);
-    margin: 60px 0 48px;
+    margin: 60px 0 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -315,7 +315,7 @@
     width: 150px;
     flex-shrink: 0;
     height: calc(100% - 120px);
-    margin: 60px 0 48px;
+    margin: 60px 0 60px;
     display: flex;
     align-items: flex-start;
     padding-top: 8px;
@@ -329,7 +329,7 @@
     min-width: 0;
     max-width: 720px;
     height: calc(100% - 120px);
-    margin: 60px 0 48px;
+    margin: 60px 0 60px;
 }
 
 .content-col {
@@ -567,7 +567,7 @@ section h2 {
 
 .project-note {
     font-size: 0.78rem;
-    color: var(--accent-amber);
+    color: var(--accent-amber-strong);
     margin-top: -6px;
     margin-bottom: 14px;
 }
@@ -748,28 +748,28 @@ section h2 {
 .site-footer {
     flex-shrink: 0;
     text-align: center;
-    padding: 10px 0;
+    padding: 24px 0 16px;
     border-top: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
 }
 
 .footer-thanks {
     font-family: var(--font-body);
-    font-size: 0.72rem;
-    color: var(--text-faint);
+    font-size: 0.85rem;
+    color: var(--text-dim);
     margin: 0;
 }
 
 .footer-quote {
-    font-size: 0.68rem;
-    color: var(--text-faint);
+    font-size: 0.78rem;
+    color: var(--accent-amber);
     margin: 0;
 }
 
 .footer-copyright {
-    font-size: 0.66rem;
+    font-size: 0.72rem;
     color: var(--text-faint);
     margin: 0;
 }
@@ -931,7 +931,7 @@ section h2 {
         height: auto;
         margin: 0;
         padding: 0;
-        background: rgba(29, 32, 33, 0.92);
+        background: rgba(36, 33, 29, 0.92);
         backdrop-filter: blur(8px);
         border: none;
         border-bottom: 1px solid var(--border);

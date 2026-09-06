@@ -445,11 +445,12 @@ export default function App() {
                         </section>
                     </main>
                 </div>
-                <LofiBar />
 
                 <aside className='nav-col'>
                     <Navbar scrollRef={contentRef} />
                 </aside>
+
+                <LofiBar />
             </div>
 
             <footer className='site-footer mono'>
