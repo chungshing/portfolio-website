@@ -54,6 +54,7 @@
     flex-shrink: 0;
     position: relative;
     transform: rotate(-0.4deg);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
     background-image: repeating-linear-gradient(
         to bottom,
         transparent 0,
@@ -161,8 +162,8 @@
 }
 
 .hero-link-arrow {
-    opacity: 0;
-    transform: translateX(-4px);
+    opacity: 0.6;
+    transform: translateX(0);
     transition:
         opacity 0.2s ease,
         transform 0.2s ease;
@@ -176,7 +177,7 @@
 
 .hero-link-row:hover .hero-link-arrow {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(3px);
 }
 
 /* second sidebar card: "currently" sticky note */
@@ -253,6 +254,7 @@
 .hero-card:hover {
     transform: rotate(-0.4deg) translateY(-2px);
     border-color: rgba(214, 153, 54, 0.25);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.38);
 }
 
 .coder-card:hover {
@@ -324,6 +326,7 @@
     scroll-behavior: smooth;
     scrollbar-width: none;
     position: relative;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
     background-image: repeating-linear-gradient(
         to bottom,
         transparent 0,

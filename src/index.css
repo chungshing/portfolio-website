@@ -1,13 +1,13 @@
 :root {
     /* color */
-    --bg: #2c2925;
-    --bg-soft: #3a352e;
-    --surface: #463d31;
-    --surface-hover: #52483a;
-    --border: #6c604a;
-    --text: #f9f1d8;
-    --text-dim: #d8c8a3;
-    --text-faint: #c0ae87;
+    --bg: #24211d;
+    --bg-soft: #34302a;
+    --surface: #4d4335;
+    --surface-hover: #5a4f3f;
+    --border: #756a52;
+    --text: #fcf5df;
+    --text-dim: #e2d3ac;
+    --text-faint: #cab994;
     --accent-rust: #ef8330;
     --accent-amber: #f4bb3d;
     --accent-green: #a9a824;
