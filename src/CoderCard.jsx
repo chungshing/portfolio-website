@@ -3,7 +3,8 @@ import { Pin } from 'lucide-react';
 const CURRENTLY = [
     '→ job hunting: backend + full-stack roles',
     '→ exploring AI agents',
-    '→ building: SportsQuant · tinkering: F1 dashboard',
+    '→ building: SportsQuant (Python)',
+    '→ tinkering: F1 dashboard (Spring Boot + Next.js)',
 ];
 
 export default function CoderCard() {
