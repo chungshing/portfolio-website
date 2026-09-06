@@ -50,10 +50,6 @@ export default function ContactForm() {
                 send →
             </button>
             {sent && <p className='form-sent mono'>opening your email client...</p>}
-            <p className='form-hint mono'>
-                or email directly —{' '}
-                <a href='mailto:chungshinglai@gmail.com'>chungshinglai@gmail.com</a>
-            </p>
         </form>
     );
 }
