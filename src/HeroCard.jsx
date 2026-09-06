@@ -69,9 +69,7 @@ export default function HeroCard() {
                         target={external ? '_blank' : undefined}
                         rel={external ? 'noreferrer' : undefined}
                     >
-                        <span className='hero-link-icon'>
-                            <Icon size={13} strokeWidth={1.75} />
-                        </span>
+                        <Icon size={15} strokeWidth={1.75} />
                         <span className='mono'>{label}</span>
                         <ArrowRight size={13} strokeWidth={1.75} className='hero-link-arrow' />
                     </a>
